@@ -1,6 +1,7 @@
 import { Link, locales } from "@/i18n";
 import { ClientComponent } from "./client-component";
 import { LanguageSwitcher } from "./language-switcher";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -13,6 +14,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body>
