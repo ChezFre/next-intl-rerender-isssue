@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ClientComponent = () => {
+  const [count, setCount] = useState(0);
   const hasRunBefore = useRef(false);
   console.log(hasRunBefore.current);
 
@@ -11,7 +12,11 @@ const ClientComponent = () => {
     hasRunBefore.current = true;
   }, []);
 
-  return <div>client component</div>;
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>count: {count}</button>
+    </div>
+  );
 };
 
 export { ClientComponent };
