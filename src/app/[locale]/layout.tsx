@@ -23,6 +23,13 @@ export default function LocaleLayout({
           <Link href="/sub">Subpage</Link>
         </nav>
         {children}
+
+        <ul>
+          <li>Update the count by clicking the button</li>
+          <li>Click either the button or the link to change the language</li>
+          <li>Notice that the count has reset to 0 again</li>
+        </ul>
+
         <ClientComponent />
         <LanguageSwitcher />
       </body>
